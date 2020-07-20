@@ -90,13 +90,18 @@ check_system() {
 
     $INS install dbus
 
-    systemctl stop firewalld
-    systemctl disable firewalld
-    echo -e "${OK} ${GreenBG} firewalld 已关闭 ${Font}"
+    ufw allow http/tcp
+    ufw allow https/tcp
+    ufw allow 443/tcp
+    echo -e "${OK} ${GreenBG} ufw 允许 443"
+   
+    #systemctl stop firewalld
+    #systemctl disable firewalld
+    #echo -e "${OK} ${GreenBG} firewalld 已关闭 ${Font}"
 
-    systemctl stop ufw
-    systemctl disable ufw
-    echo -e "${OK} ${GreenBG} ufw 已关闭 ${Font}"
+    #systemctl stop ufw
+    #systemctl disable ufw
+    #echo -e "${OK} ${GreenBG} ufw 已关闭 ${Font}"
 }
 
 is_root() {
