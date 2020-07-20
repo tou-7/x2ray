@@ -90,10 +90,10 @@ check_system() {
 
     $INS install dbus
 
-    ufw allow http/tcp
-    ufw allow https/tcp
-    ufw allow 443/tcp
-    echo -e "${OK} ${GreenBG} ufw 允许 443"
+    #ufw allow http/tcp
+    #ufw allow https/tcp
+    #ufw allow 443/tcp
+    #echo -e "${OK} ${GreenBG} ufw 允许 443"
    
     #systemctl stop firewalld
     #systemctl disable firewalld
